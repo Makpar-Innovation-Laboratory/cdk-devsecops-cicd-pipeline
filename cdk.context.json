@@ -1,0 +1,67 @@
+{
+  "availability-zones:account=971422712485:region=us-east-1": [
+    "us-east-1a",
+    "us-east-1b",
+    "us-east-1c",
+    "us-east-1d",
+    "us-east-1e",
+    "us-east-1f"
+  ],
+  "ssm:account=971422712485:parameterName=/SampleDevSecOpsCICDPipeline/CoreVPCID:region=us-east-1": "vpc-046f57ad139f14eb2",
+  "vpc-provider:account=971422712485:filter.vpc-id=vpc-046f57ad139f14eb2:region=us-east-1:returnAsymmetricSubnets=true": {
+    "vpcId": "vpc-046f57ad139f14eb2",
+    "vpcCidrBlock": "10.0.0.0/16",
+    "ownerAccountId": "971422712485",
+    "availabilityZones": [],
+    "subnetGroups": [
+      {
+        "name": "Private",
+        "type": "Private",
+        "subnets": [
+          {
+            "subnetId": "subnet-0fbbe36a1a7282f34",
+            "cidr": "10.0.96.0/19",
+            "availabilityZone": "us-east-1a",
+            "routeTableId": "rtb-00f4299e7bdc1a370"
+          },
+          {
+            "subnetId": "subnet-0946510b9acf2c769",
+            "cidr": "10.0.128.0/19",
+            "availabilityZone": "us-east-1b",
+            "routeTableId": "rtb-0bccecf71ed55605b"
+          },
+          {
+            "subnetId": "subnet-060d921fe809c979e",
+            "cidr": "10.0.160.0/19",
+            "availabilityZone": "us-east-1c",
+            "routeTableId": "rtb-04459b42675b814c5"
+          }
+        ]
+      },
+      {
+        "name": "Public",
+        "type": "Public",
+        "subnets": [
+          {
+            "subnetId": "subnet-00a225bc766922512",
+            "cidr": "10.0.0.0/19",
+            "availabilityZone": "us-east-1a",
+            "routeTableId": "rtb-0d3b69b7dda8847f7"
+          },
+          {
+            "subnetId": "subnet-0ebd1da3865c1238e",
+            "cidr": "10.0.32.0/19",
+            "availabilityZone": "us-east-1b",
+            "routeTableId": "rtb-02ecd5ac2b2440514"
+          },
+          {
+            "subnetId": "subnet-03be9b78172801ebd",
+            "cidr": "10.0.64.0/19",
+            "availabilityZone": "us-east-1c",
+            "routeTableId": "rtb-05f44f198e728a579"
+          }
+        ]
+      }
+    ]
+  }
+}

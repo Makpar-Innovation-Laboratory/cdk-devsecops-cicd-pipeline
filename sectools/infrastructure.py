@@ -80,7 +80,7 @@ class SecTools(cdk.Stack):
         # Create Sonarqube Postgres DB for Sonarqube service connect
         self.database = rds.DatabaseInstance(self, 'SonarqubeDB',
             engine=rds.DatabaseInstanceEngine.postgres(
-                version=rds.PostgresEngineVersion.VER_14_2),
+                version=rds.PostgresEngineVersion.VER_16_4),
             database_name="sonarqube",
             credentials=rds.Credentials.from_generated_secret(
                 "sonar_creds"),
@@ -89,7 +89,7 @@ class SecTools(cdk.Stack):
             vpc=vpc,
             multi_az=True,
             vpc_subnets=ec2.SubnetSelection(
-                subnet_type=ec2.SubnetType.PRIVATE_WITH_EGRESS,
+                subnet_type=ec2.SubnetType.PUBLIC,
             ),
             publicly_accessible=False,
             security_groups=[self.sg]

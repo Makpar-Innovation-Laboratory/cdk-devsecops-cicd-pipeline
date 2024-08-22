@@ -6,7 +6,7 @@ import aws_cdk as cdk
 
 CDK_APP_NAME = "SampleDevSecOps-CICD-Pipeline"
 
-CDK_APP_PYTHON_VERSION = "3.7"
+CDK_APP_PYTHON_VERSION = "3.10.12"
 
 DEV_ACCOUNT_ID = "<MY_ACCOUNT_ID>"
 REGION = "<MY_REGION>"
