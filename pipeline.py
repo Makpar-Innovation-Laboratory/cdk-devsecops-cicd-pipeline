@@ -20,11 +20,21 @@ class DevSecOpsPipelineStack(cdk.Stack):
   def __init__(self, scope: Construct, id_: str, **kwargs) -> None:
     super().__init__(scope, id_, **kwargs)
 
-    repository = codecommit.Repository.from_repository_name(self, 
-      'CodeCommitRepo', 
-      constants.CODECOMMIT_REPOSITORY_NAME
-    )
-    source = pipelines.CodePipelineSource.code_commit(repository, branch='main')
+    # repo=pipelines.CodePipelineSource.connection(
+    #                 "Makpar-Innovation-Laboratory/cdk-devsecops-cicd-pipeline",
+    #                 "main",
+    #                 connection_arn="arn:aws:codeconnections:us-east-1:971422712485:connection/f39c3a93-46d2-4196-a224-04d65752ffd3",
+    #             )
+    
+    # repository = codecommit.Repository.from_repository_name(self, 
+    #   'CodeCommitRepo', 
+    #   constants.CODECOMMIT_REPOSITORY_NAME
+    # )
+    source = pipelines.CodePipelineSource.connection(
+                    "Makpar-Innovation-Laboratory/cdk-devsecops-cicd-pipeline",
+                    "main",
+                    connection_arn="arn:aws:codeconnections:us-east-1:971422712485:connection/f39c3a93-46d2-4196-a224-04d65752ffd3",
+                )
 
     sonarqube_secret_arn = cdk.Fn.import_value(constants.SONARQUBE_SECRET_ARN_EXPORT_NAME)
     sonar_secret = secretsmanager.Secret.from_secret_complete_arn(self, 'SonarQubeSecret', 
