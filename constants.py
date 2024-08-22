@@ -11,7 +11,7 @@ CDK_APP_PYTHON_VERSION = "3.7"
 DEV_ACCOUNT_ID = "<MY_ACCOUNT_ID>"
 REGION = "<MY_REGION>"
 
-DEV_ENV = cdk.Environment(account=DEV_ACCOUNT_ID, region=REGION)
+DEV_ENV = cdk.Environment(account="971422712485", region="us-east-1")
 
 CODECOMMIT_REPOSITORY_NAME = "cdk-devsecops-cicd-pipeline"
 
